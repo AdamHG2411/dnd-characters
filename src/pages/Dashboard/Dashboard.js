@@ -12,16 +12,31 @@ class Dashboard extends Component {
 
 	render() {
 		console.log('Dashboard: render');
-		return (
-			<div>
-				<p>Dashboard</p>
-			</div>
-		);
+		let characterCards = [];
+		if (this.state.characters) {
+			console.log(this.state.characters);
+			characterCards = this.state.characters.data.map((character) => {
+				return (
+					<div className="Character-Card">
+						<h2 className="Character-Name">{character.name}</h2>
+						<p className="Character-Desc">
+							<em>
+								{character.race} {character.class} (lvl. {character.level})
+							</em>
+						</p>
+					</div>
+				);
+			});
+		} else {
+			characterCards = <p>Loading...</p>;
+		}
+		return <div>{characterCards}</div>;
 	}
 
-	componentDidUpdate() {
-		console.log('Dashboard: componentDidUpdate');
-		axios.get('localhost:3001/characters').then((res) => {
+	componentDidMount() {
+		console.log('Dashboard: componentDidMount');
+		axios.get('http://localhost:3001/characters').then((res) => {
+			console.log(res);
 			this.setState({ characters: res });
 		});
 	}
