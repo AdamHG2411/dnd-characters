@@ -1,0 +1,31 @@
+.Dashboard-Characters {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 20px auto;
+	width: 80%;
+	justify-content: center;
+}
+
+.Character-Card {
+	display: flex;
+	flex-direction: column;
+	padding: 2em;
+	margin: 20px;
+}
+
+.Character-Show,
+.Character-Edit {
+	background-color: #bbb;
+	color: teal;
+	font-weight: 800;
+	font-size: 1.4em;
+	margin: 10px auto;
+}
+
+.Character-Delete {
+	background-color: #222;
+	color: #ee4411;
+	font-weight: 800;
+	font-size: 1.4em;
+	margin: 10px auto;
+}

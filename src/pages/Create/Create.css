@@ -1,0 +1,104 @@
+.Alignment-Grid {
+	display: grid;
+	grid-template-rows: auto auto 1fr 1fr 1fr;
+	grid-template-columns: auto 1fr 1fr 1fr;
+	width: 40%;
+	max-width: 500px;
+	margin: 20px auto;
+}
+
+.Alignment-Header {
+	grid-row: 1 / 2;
+	grid-column: 1 / 5;
+	margin: 20px auto;
+}
+
+.Lawful {
+	grid-row: 2 / 3;
+	grid-column: 2 / 3;
+	margin: auto;
+}
+
+.Neutral-Order {
+	grid-row: 2 / 3;
+	grid-column: 3 / 4;
+	margin: auto;
+}
+
+.Chaotic {
+	grid-row: 2 / 3;
+	grid-column: 4 / 5;
+	margin: auto;
+}
+
+.Good {
+	grid-row: 3 / 4;
+	grid-column: 1 / 2;
+	margin: auto 0 auto auto;
+}
+
+.Neutral-Morals {
+	grid-row: 4 / 5;
+	grid-column: 1 / 2;
+	margin: auto 0 auto auto;
+}
+
+.Evil {
+	grid-row: 5 / 6;
+	grid-column: 1 / 2;
+	margin: auto 0 auto auto;
+}
+
+.lawfulGood {
+	grid-row: 3 / 4;
+	grid-column: 2 / 3;
+	margin: auto;
+}
+
+.lawfulNeutral {
+	grid-row: 4 / 5;
+	grid-column: 2 / 3;
+	margin: auto;
+}
+
+.lawfulEvil {
+	grid-row: 5 / 6;
+	grid-column: 2 / 3;
+	margin: auto;
+}
+
+.neutralGood {
+	grid-row: 3 / 4;
+	grid-column: 3 / 4;
+	margin: auto;
+}
+
+.trueNeutral {
+	grid-row: 4 / 5;
+	grid-column: 3 / 4;
+	margin: auto;
+}
+
+.neutralEvil {
+	grid-row: 5 / 6;
+	grid-column: 3 / 4;
+	margin: auto;
+}
+
+.chaoticGood {
+	grid-row: 3 / 4;
+	grid-column: 4 / 5;
+	margin: auto;
+}
+
+.chaoticNeutral {
+	grid-row: 4 / 5;
+	grid-column: 4 / 5;
+	margin: auto;
+}
+
+.chaoticEvil {
+	grid-row: 5 / 6;
+	grid-column: 4 / 5;
+	margin: auto;
+}

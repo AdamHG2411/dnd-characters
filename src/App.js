@@ -6,12 +6,45 @@ import Show from './pages/Show/Show.js';
 import Create from './pages/Create/Create.js';
 import Edit from './pages/Edit/Edit.js';
 import './App.css';
+const axios = require('axios');
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 		console.log(this.props);
+		this.state = {
+			characters: null
+		};
+		this.newCharacter = this.newCharacter.bind(this);
+		this.fetchAll = this.fetchAll.bind(this);
+		this.delete = this.delete.bind(this);
 	}
+
+	fetchAll() {
+		console.log('App: fetchAll');
+		axios.get('http://localhost:3001/characters/').then((res) => {
+			this.setState({ characters: res.data });
+		});
+	}
+
+	newCharacter(input) {
+		console.log('App: newCharacter');
+		axios
+			.post('http://localhost:3001/characters/', input)
+			.then((res) => {
+				console.log(res);
+			})
+			.then(() => {
+				this.fetchAll();
+			});
+	}
+
+	delete(id) {
+		axios.delete(`http://localhost:3001/characters/${id}`).then(() => {
+			this.fetchAll();
+		});
+	}
+
 	render() {
 		return (
 			<div className="App">
@@ -22,34 +55,39 @@ class App extends Component {
 							exact
 							path="/"
 							render={() => {
-								return <Dashboard />;
+								return <Dashboard {...this.state} delete={this.delete} />;
 							}}
 						/>
 						<Route
 							exact
 							path="/:id/show"
-							render={() => {
-								return <Show />;
+							render={(routerProps) => {
+								return <Show {...this.state} {...routerProps} delete={this.delete} />;
 							}}
 						/>
 						<Route
 							exact
 							path="/new"
 							render={() => {
-								return <Create />;
+								return <Create newCharacter={this.newCharacter} />;
 							}}
 						/>
 						<Route
 							exact
 							path="/:id/edit"
-							render={() => {
-								return <Edit />;
+							render={(routerProps) => {
+								return <Edit {...this.state} {...routerProps} />;
 							}}
 						/>
 					</Switch>
 				</main>
 			</div>
 		);
+	}
+
+	componentDidMount() {
+		console.log('App: componentDidMount');
+		this.fetchAll();
 	}
 }
 
