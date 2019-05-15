@@ -17,7 +17,7 @@ class Show extends Component {
 	}
 
 	fetchThis() {
-		axios.get(`http://localhost:3001/characters/${this.props.match.params.id}/`).then((res) => {
+		axios.get(`http://dnd-characters-api.herokuapp.com/characters/${this.props.match.params.id}/`).then((res) => {
 			this.setState({ character: res.data });
 		});
 	}
@@ -36,7 +36,7 @@ class Show extends Component {
 			newHP = 0;
 		}
 		axios
-			.put(`http://localhost:3001/characters/${this.props.match.params.id}`, {
+			.put(`http://dnd-characters-api.herokuapp.com/characters/${this.props.match.params.id}`, {
 				hitPoints: {
 					max: this.state.character.hitPoints.max,
 					cur: newHP,

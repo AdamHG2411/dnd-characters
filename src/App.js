@@ -22,7 +22,7 @@ class App extends Component {
 
 	fetchAll() {
 		console.log('App: fetchAll');
-		axios.get('http://localhost:3001/characters/').then((res) => {
+		axios.get('http://dnd-characters-api.herokuapp.com/characters/').then((res) => {
 			this.setState({ characters: res.data });
 		});
 	}
@@ -32,7 +32,7 @@ class App extends Component {
 		input.hitPoints.max = input.ability.con + input.hitDie;
 		input.hitPoints.cur = input.hitPoints.max;
 		axios
-			.post('http://localhost:3001/characters/', input)
+			.post('http://dnd-characters-api.herokuapp.com/characters/', input)
 			.then((res) => {
 				console.log(res);
 			})
@@ -42,7 +42,7 @@ class App extends Component {
 	}
 
 	delete(id) {
-		axios.delete(`http://localhost:3001/characters/${id}`).then(() => {
+		axios.delete(`http://dnd-characters-api.herokuapp.com/characters/${id}`).then(() => {
 			this.fetchAll();
 		});
 	}
