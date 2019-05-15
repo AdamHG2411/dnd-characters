@@ -32,9 +32,6 @@ class Dashboard extends Component {
 							<Link to={`/${character._id}/show`}>
 								<button className="Character-Show">Show</button>
 							</Link>
-							{/* <Link to={`/${character._id}/edit`}>
-								<button className="Character-Edit">Edit</button>
-							</Link> */}
 							<button className="Character-Delete" onClick={this.clickDelete} value={character._id}>
 								Delete
 							</button>
