@@ -28,15 +28,17 @@ class Dashboard extends Component {
 								{character.race} {character.class} (lvl. {character.level})
 							</em>
 						</p>
-						<Link to={`/${character._id}/show`}>
-							<button className="Character-Show">Show</button>
-						</Link>
-						<Link to={`/${character._id}/edit`}>
-							<button className="Character-Edit">Edit</button>
-						</Link>
-						<button className="Character-Delete" onClick={this.clickDelete} value={character._id}>
-							Delete
-						</button>
+						<div className="Character-Buttons">
+							<Link to={`/${character._id}/show`}>
+								<button className="Character-Show">Show</button>
+							</Link>
+							{/* <Link to={`/${character._id}/edit`}>
+								<button className="Character-Edit">Edit</button>
+							</Link> */}
+							<button className="Character-Delete" onClick={this.clickDelete} value={character._id}>
+								Delete
+							</button>
+						</div>
 					</div>
 				);
 			});

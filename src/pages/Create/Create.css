@@ -102,3 +102,13 @@
 	grid-column: 4 / 5;
 	margin: auto;
 }
+
+.ability-selectors {
+	display: flex;
+	margin: 20px;
+	justify-content: center;
+}
+
+.ability-selectors > div {
+	margin: 0 10px;
+}

@@ -4,7 +4,7 @@ import Header from './components/Header/Header.js';
 import Dashboard from './pages/Dashboard/Dashboard.js';
 import Show from './pages/Show/Show.js';
 import Create from './pages/Create/Create.js';
-import Edit from './pages/Edit/Edit.js';
+// import Edit from './pages/Edit/Edit.js';
 import './App.css';
 const axios = require('axios');
 
@@ -29,6 +29,8 @@ class App extends Component {
 
 	newCharacter(input) {
 		console.log('App: newCharacter');
+		input.hitPoints.max = input.ability.con + input.hitDie;
+		input.hitPoints.cur = input.hitPoints.max;
 		axios
 			.post('http://localhost:3001/characters/', input)
 			.then((res) => {
@@ -72,13 +74,13 @@ class App extends Component {
 								return <Create newCharacter={this.newCharacter} />;
 							}}
 						/>
-						<Route
+						{/* <Route
 							exact
 							path="/:id/edit"
 							render={(routerProps) => {
 								return <Edit {...this.state} {...routerProps} />;
 							}}
-						/>
+						/> */}
 					</Switch>
 				</main>
 			</div>

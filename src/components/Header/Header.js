@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import './Header.css';
 
 class Header extends Component {
 	constructor(props) {
@@ -9,12 +10,12 @@ class Header extends Component {
 
 	render() {
 		return (
-			<div>
-				<nav>
+			<header className="Header">
+				<nav className="Header-Nav">
 					<NavLink to="/">Dashboard</NavLink>
 					<NavLink to="/new">Create</NavLink>
 				</nav>
-			</div>
+			</header>
 		);
 	}
 }

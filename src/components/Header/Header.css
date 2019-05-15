@@ -1,0 +1,17 @@
+.Header {
+	background-color: #4682b4;
+}
+
+.Header-Nav {
+	display: flex;
+	justify-content: center;
+}
+
+.Header a {
+	color: white;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-weight: 800px;
+	font-size: 2em;
+	text-decoration: none;
+	margin: 20px;
+}
