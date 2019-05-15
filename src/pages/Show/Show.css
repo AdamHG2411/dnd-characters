@@ -1,0 +1,30 @@
+.Show {
+	display: flex;
+	flex-direction: column;
+	align-content: flex-start;
+	width: 200px;
+	margin: 50px auto;
+	text-align: left;
+	background-color: rgb(45, 75, 102);
+	border: 2px solid steelblue;
+	padding: 1em;
+	border-radius: 10px;
+}
+
+.Show > * {
+	margin: 5px auto 5px 0;
+}
+
+.hpEdit {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+.hpEdit > * {
+	margin: 0 5px;
+}
+
+.hpChange {
+	width: 40px;
+}

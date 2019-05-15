@@ -128,7 +128,7 @@ class Create extends Component {
 		}
 
 		return (
-			<div>
+			<div className="Create">
 				<form onSubmit={this.submitForm}>
 					<h3>New Character:</h3>
 					<p>Name:</p>

@@ -1,3 +1,7 @@
+.Create {
+	margin: 50px auto;
+}
+
 .Alignment-Grid {
 	display: grid;
 	grid-template-rows: auto auto 1fr 1fr 1fr;
