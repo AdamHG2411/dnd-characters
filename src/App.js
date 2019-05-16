@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header/Header.js';
 import Dashboard from './pages/Dashboard/Dashboard.js';
 import Show from './pages/Show/Show.js';
@@ -49,41 +49,36 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className="App">
-				<Header />
-				<main>
-					<Switch>
-						<Route
-							exact
-							path="/"
-							render={() => {
-								return <Dashboard {...this.state} delete={this.delete} />;
-							}}
-						/>
-						<Route
-							exact
-							path="/:id/show"
-							render={(routerProps) => {
-								return <Show {...this.state} {...routerProps} delete={this.delete} />;
-							}}
-						/>
-						<Route
-							exact
-							path="/new"
-							render={() => {
-								return <Create newCharacter={this.newCharacter} />;
-							}}
-						/>
-						{/* <Route
-							exact
-							path="/:id/edit"
-							render={(routerProps) => {
-								return <Edit {...this.state} {...routerProps} />;
-							}}
-						/> */}
-					</Switch>
-				</main>
-			</div>
+			<Router>
+				<div className="App">
+					<Header />
+					<main>
+						<Switch>
+							<Route
+								exact
+								path="/"
+								render={() => {
+									return <Dashboard {...this.state} delete={this.delete} />;
+								}}
+							/>
+							<Route
+								exact
+								path="/:id/show"
+								render={(routerProps) => {
+									return <Show {...this.state} {...routerProps} delete={this.delete} />;
+								}}
+							/>
+							<Route
+								exact
+								path="/new"
+								render={() => {
+									return <Create newCharacter={this.newCharacter} />;
+								}}
+							/>
+						</Switch>
+					</main>
+				</div>
+			</Router>
 		);
 	}
 

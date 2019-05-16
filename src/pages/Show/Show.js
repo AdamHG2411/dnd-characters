@@ -17,9 +17,13 @@ class Show extends Component {
 	}
 
 	fetchThis() {
-		axios.get(`http://dnd-characters-api.herokuapp.com/characters/${this.props.match.params.id}/`).then((res) => {
-			this.setState({ character: res.data });
-		});
+		if (this.props.match) {
+			axios
+				.get(`http://dnd-characters-api.herokuapp.com/characters/${this.props.match.params.id}/`)
+				.then((res) => {
+					this.setState({ character: res.data });
+				});
+		}
 	}
 
 	hpEdit(evt) {
