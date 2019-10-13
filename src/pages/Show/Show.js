@@ -14,6 +14,7 @@ class Show extends Component {
 		this.hpEdit = this.hpEdit.bind(this);
 		this.hpHandleChange = this.hpHandleChange.bind(this);
 		this.fetchThis = this.fetchThis.bind(this);
+		this.calculateModifier = this.calculateModifier.bind(this);
 	}
 
 	fetchThis() {
@@ -65,6 +66,10 @@ class Show extends Component {
 		}
 	}
 
+	calculateModifier(ability) {
+		return Math.floor(ability / 2) - 5;
+	}
+
 	render() {
 		console.log('Show: render');
 		let content;
@@ -95,27 +100,27 @@ class Show extends Component {
 					<h3>Abilities:</h3>
 					<p>
 						<strong>Strength:</strong> {character.ability.str} (Mod:{' '}
-						{Math.floor(character.ability.str / 2) - 5})
+						{this.calculateModifier(character.ability.str)})
 					</p>
 					<p>
 						<strong>Dexterity:</strong> {character.ability.dex} (Mod:{' '}
-						{Math.floor(character.ability.dex / 2) - 5})
+						{this.calculateModifier(character.ability.dex)})
 					</p>
 					<p>
 						<strong>Constitution:</strong> {character.ability.con} (Mod:{' '}
-						{Math.floor(character.ability.con / 2) - 5})
+						{this.calculateModifier(character.ability.con)})
 					</p>
 					<p>
 						<strong>Intelligence:</strong> {character.ability.int} (Mod:{' '}
-						{Math.floor(character.ability.int / 2) - 5})
+						{this.calculateModifier(character.ability.int)})
 					</p>
 					<p>
 						<strong>Wisdom:</strong> {character.ability.wis} (Mod:{' '}
-						{Math.floor(character.ability.wis / 2) - 5})
+						{this.calculateModifier(character.ability.wis)})
 					</p>
 					<p>
 						<strong>Charisma</strong> {character.ability.cha} (Mod:{' '}
-						{Math.floor(character.ability.str / 2) - 5})
+						{this.calculateModifier(character.ability.str)})
 					</p>
 				</div>
 			);
